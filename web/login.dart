@@ -18,15 +18,21 @@ class Login extends PolymerElement {
   }
   
   void changeIt(Event e){
-    loggedIn = true;
-    new Future(() {  
-      var changeSome = shadowRoot.querySelector('#helloChangeIt');
-      changeSome.text = "Welcome, was just loged it";
-    });
+    final bool lessThen = password.length >= minLength;
+    final bool greaterThen = password.length <= maxLength;
+    loggedIn = lessThen && greaterThen ? true : false;
+    if (loggedIn) {
+      new Future(() {  
+        var changeSome = shadowRoot.querySelector('#helloChangeIt');
+        changeSome.text = "Welcome, was just loged it";
+      });
+    }
   }
   
+  
+  
 //  void passwordChanged(String oldPassword) {
-//    print(oldPassword); this is just for test
+//    print(oldPassword); //this is just for test
 //    print(password);
 //  }    
 

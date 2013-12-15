@@ -18,7 +18,7 @@
       }
       .error {
         color: red;
-        
+        font-size: 22px;
       }
     </style>
     <template if='{{loggedIn == false}}'>
@@ -34,10 +34,10 @@
       </form>
       
       <template if="{{password.length > 0 && password.length < minLength}}">
-        <p class="error">This password is to short, should be at least {{minLength}}</p>
+        <p class="error">This password is too short, should be at least {{minLength}}</p>
       </template>
       <template if="{{password.length > maxLength}}">
-        <p class="error">This password is to long, should be less then {{maxLength}}</p>
+        <p class="error">This password is too long, should be less then {{maxLength}}</p>
       </template>
     </template>
     <template if='{{loggedIn == true}}'>
