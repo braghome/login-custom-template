@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample app</title>
+    <link rel="stylesheet" href="login.css">
+    
+    <!-- import the click-counter -->
+    <link rel="import" href="login.html">
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <login-polymer minLength="4" maxLength="8"></login-polymer>
+
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<polymer-element name="login-polymer">
+  <template>
+    <style>
+      #helloChangeIt {
+         width: 30%;
+         height: 40px;
+         color: brown;
+         position: relative;
+         border: 1px solid #ccc;
+         background-color: #fff;
+         font-family: sans-serif, halvetica;
+         text-align: center;
+         padding-top: 20px;
+      }
+      #login {
+        margin-left: -37px;
+      }
+      .error {
+        color: red;
+        
+      }
+    </style>
+    <template if='{{loggedIn == false}}'>
+      <form>
+        <dl>
+          <dt><label>Login</label></dt>
+          <dd><input id="login" type="text" placeholder="enter login field"></dd>
+          <dt><label>Password</label></dt>
+          <dt><input id="password" type="password" placeholder="enter password" value="{{password}}"></dt>          
+          <dt><label>Submit button</label></dt>
+          <dt><input id="submitInput" type="submit" value="login" on-click="{{changeIt}}"></dt>
+        </dl>
+      </form>
+      
+      <template if="{{password.length > 0 && password.length < minLength}}">
+        <p class="error">This password is to short, should be at least {{minLength}}</p>
+      </template>
+      <template if="{{password.length > maxLength}}">
+        <p class="error">This password is to long, should be less then {{maxLength}}</p>
+      </template>
+    </template>
+    <template if='{{loggedIn == true}}'>
+    <p id="helloChangeIt"></p>
+    </template>
+  </template>
+  <script type="application/dart" src="login.dart"></script>
+</polymer-element>
+
