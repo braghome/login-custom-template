@@ -4,7 +4,7 @@ import 'dart:async';
 
 
 /**
- * A Polymer click counter element.
+ * A Polymer login element.
  */
 @CustomTag('login-polymer')
 class Login extends PolymerElement {
@@ -28,8 +28,6 @@ class Login extends PolymerElement {
       });
     }
   }
-  
-  
   
 //  void passwordChanged(String oldPassword) {
 //    print(oldPassword); //this is just for test

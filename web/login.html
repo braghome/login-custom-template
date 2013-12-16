@@ -2,6 +2,15 @@
 <polymer-element name="login-polymer">
   <template>
     <style>
+      @host {
+        :scope {
+          background-color: LemonChiffon;
+          text-align: center;
+          display: inline-block;
+          border: solid 1px;
+          padding: 10px 10px 10px 10px;
+        }
+      }
       #helloChangeIt {
          width: 30%;
          height: 40px;
@@ -18,7 +27,7 @@
       }
       .error {
         color: red;
-        font-size: 22px;
+        font-size: 18px;
       }
     </style>
     <template if='{{loggedIn == false}}'>
